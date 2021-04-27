@@ -18,10 +18,10 @@ try {
   SKIP :
   { " " | "\t" | "\n"}
   TOKEN :
-  {   < NOMBRE: ["1"-"9"] (["0"-"9"])* >|<";"> /*< EOL: "\n" >*/}
+  {   < NOMBRE: ["1"-"9"] (["0"-"9"])* >|< EOL: ";" >}
   void mainNT () :
   {}
-  { expression() /*<EOL>*/<";">}
+  { expression() <"EOL">}
   void expression () :
   {}
   { terme() ("+" terme()| "-" terme()
